@@ -1,0 +1,163 @@
+[gd_scene load_steps=13 format=3 uid="uid://dwoo6ywhwfi1w"]
+
+[ext_resource type="Script" path="res://levels/Scripts/player.gd" id="1_cjit3"]
+[ext_resource type="Texture2D" uid="uid://bk1f7sqe2xnau" path="res://Assetes/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_lk7au"]
+[ext_resource type="Texture2D" uid="uid://b8rqx83f6j7p" path="res://Assetes/Sprite Pack 2/2 - Mr. Mochi/Idle (32 x 32).png" id="1_unw6h"]
+[ext_resource type="Texture2D" uid="uid://bowe8eqao55da" path="res://Assetes/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="2_gl488"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ocjv0"]
+texture = ExtResource("1_lk7au")
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+11:1/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+11:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+15:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+11:4/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+11:5/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+4:8/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_60udh"]
+texture = ExtResource("2_gl488")
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+1:5/0 = 0
+3:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+14:5/0 = 0
+16:5/0 = 0
+18:5/0 = 0
+1:1/size_in_atlas = Vector2i(3, 3)
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_gvncj"]
+sources/1 = SubResource("TileSetAtlasSource_ocjv0")
+sources/2 = SubResource("TileSetAtlasSource_60udh")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21473"]
+atlas = ExtResource("1_unw6h")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pj4nk"]
+atlas = ExtResource("1_unw6h")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3sloi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21473")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pj4nk")
+}],
+"loop": true,
+"name": &"idLE",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4b6qd"]
+radius = 9.0
+height = 24.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fywls"]
+radius = 23.0
+height = 886.0
+
+[node name="world 01" type="Node2D"]
+position = Vector2(34, 305)
+
+[node name="level" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_gvncj")
+format = 2
+layer_0/name = "ground"
+layer_0/tile_data = PackedInt32Array(-2, 262145, 4, -1, 65537, 3, -65536, 65537, 3, -65535, 65537, 3, -65534, 65537, 3, -65533, 65537, 3, -65532, 65537, 3, 4, 262145, 4, 5, 65537, 3, 6, 65537, 3, 7, 65537, 3, 8, 65537, 3, 9, 65537, 3, 10, 65537, 3, 11, 65537, 3, 12, 65537, 3, 13, 65537, 3, 14, 65537, 3, 15, 65537, 3, 16, 65537, 3, 17, 65537, 3, 18, 65537, 3, -65518, 65537, 3, -65517, 65537, 3, -65516, 65537, 3, -65515, 65537, 3, -65514, 65537, 3, -65513, 65537, 3, -65512, 65537, 3, -65511, 65537, 3, -65510, 65537, 3, -131046, 65537, 3, -131045, 65537, 3, -131044, 65537, 3, -131043, 65537, 3, 65534, 262145, 4, 65535, 262145, 4, 0, 262145, 4, 1, 262145, 4, 2, 262145, 4, 3, 262145, 4, 65540, 262145, 4, 65541, 262145, 4, 65542, 262145, 4, 65543, 262145, 4, 65544, 262145, 4, 65545, 262145, 4, 65546, 262145, 4, 65547, 262145, 4, 65548, 262145, 4, 65549, 262145, 4, 65550, 262145, 4, 65551, 262145, 4, 65552, 262145, 4, 65553, 262145, 4, 65554, 262145, 4, 19, 262145, 4, 20, 262145, 4, 21, 262145, 4, 22, 262145, 4, 23, 262145, 4, 24, 262145, 4, 25, 262145, 4, 26, 262145, 4, 27, 262145, 4, 65555, 262145, 4, 65556, 262145, 4, 65557, 262145, 4, 65558, 262145, 4, 65559, 262145, 4, 65560, 262145, 4, 65561, 262145, 4, 65562, 262145, 4, 28, 262145, 4, 29, 262145, 4, 30, 262145, 4, 31, 262145, 4, 32, 262145, 4, 33, 262145, 4, 34, 262145, 4, 35, 262145, 4, 36, 262145, 4, 37, 262145, 4, 65563, 262145, 4, 65564, 262145, 4, 65565, 262145, 4, 65566, 262145, 4, 65567, 262145, 4, 65568, 262145, 4, 65569, 262145, 4, 65570, 262145, 4, 65571, 262145, 4, 65572, 262145, 4, 65573, 262145, 4, -65509, 262145, 4, -65508, 262145, 4, -65507, 262145, 4, -65506, 262145, 4, -65505, 262145, 4, -65504, 262145, 4, -65503, 262145, 4, -65502, 262145, 4, -65501, 262145, 4, -65500, 262145, 4, -65499, 262145, 4, -131035, 65537, 3, -131036, 65537, 3, -131037, 65537, 3, -131038, 65537, 3, -131039, 65537, 3, -131040, 65537, 3, -131041, 65537, 3, -131042, 65537, 3, -65538, 65537, 3)
+layer_1/name = ""
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(-196587, 65538, 1, -196583, 65538, 1, -262116, 65538, 1, -262111, 65538, 1, -196606, 65538, 1)
+
+[node name="player" type="CharacterBody2D" parent="."]
+position = Vector2(4, -33)
+script = ExtResource("1_cjit3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
+position = Vector2(4, -12)
+scale = Vector2(1.25, 1.34375)
+sprite_frames = SubResource("SpriteFrames_3sloi")
+animation = &"idLE"
+autoplay = "idLE"
+frame_progress = 0.38478
+
+[node name="Colisor" type="CollisionShape2D" parent="player"]
+position = Vector2(5, -3)
+shape = SubResource("CapsuleShape2D_4b6qd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(333, 8)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_fywls")
+debug_color = Color(0.588235, 0.262745, 0.698039, 0.419608)
